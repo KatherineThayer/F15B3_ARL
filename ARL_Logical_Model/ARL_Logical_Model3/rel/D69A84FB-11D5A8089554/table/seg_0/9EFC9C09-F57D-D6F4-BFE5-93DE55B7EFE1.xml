@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9EFC9C09-F57D-D6F4-BFE5-93DE55B7EFE1" name="F15B3_App">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>9A5EDBEB-73C2-F3CA-CDA6-30E9EA447CF7</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="app_id" id="A532059D-5517-A89E-35C1-6A8242D26402">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>39257BD7-B902-1977-FE46-FA7C293DC980</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15B3_Emp_emp_id" id="C8FA0BBB-5DD9-7BFA-D445-3B6C2D33F050">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>B782595E-2D73-94DA-992B-4B360A9911F8</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05FC5D97-DA26-F6A0-1455-8254C249D2AF" referredColumn="A9F0315B-FF81-B1CB-3F12-48DD7CF1E76E"/>
+</associations>
+</Column>
+<Column name="F15B3_RFE_rfe_id" id="19A53102-EE10-E8E0-2189-E17BC039C4BC">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>D71E8726-B1F1-767E-EB06-A5254A594F8D</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E445BEC8-250D-5138-E52E-454655AD60D8" referredColumn="93BED908-4B6F-16DC-CFB7-601B488D50D4"/>
+</associations>
+</Column>
+<Column name="F15B3_AppCode_appcode_id" id="B4705C3D-1B7D-5002-3FBA-25B1CD4D3B4A">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>7F3C2497-390F-7C08-3A8B-48CC0B639D11</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E04C2C95-DD38-02AD-10B8-C764FAD90AE5" referredColumn="95CF1CC3-49A7-2885-BB36-86C47A8216CF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="02C0F727-0FA8-4044-50F9-1AEFACBFAF6F" name="F15B3_App_PK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>953E1794-A031-2968-8BCB-6034F1986ED8</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A532059D-5517-A89E-35C1-6A8242D26402"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A3F83737-08F0-4DCE-2C7C-9147DDCF0CDC" name="F15B3_App_F15B3_Emp_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>D5A0B87D-902B-1A0B-4CC6-73E794B864DB</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8FA0BBB-5DD9-7BFA-D445-3B6C2D33F050"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F13FF2AC-34E9-F592-5789-0CD2BEC54B2F" name="F15B3_App_F15B3_RFE_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>78AF9F2D-B0FD-AFB8-28B4-B0E190DC449E</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19A53102-EE10-E8E0-2189-E17BC039C4BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C6A5C883-5C7C-0943-A468-375DE4ABB2BC" name="F15B3_App_F15B3_AppCode_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>0B98D118-29CB-52CD-0DC1-9954307852D6</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4705C3D-1B7D-5002-3FBA-25B1CD4D3B4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

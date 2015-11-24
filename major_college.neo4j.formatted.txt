@@ -1,0 +1,55 @@
+conn = connectTo 'jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl' 'C##cs347_rk8596' 'orcl_rk8596' 'rdf_mode' 'B3';
+
+
+Neo4j on conn "CREATE (:major { major_id : 1, major_name : 'Computer Science', credit_hours : 125, avg_sal : 90000, avg_years_to_grad : 4, main_building: 'GDC', num_students : 3000, deptno : 1})"
+
+Neo4j on conn "CREATE (:major { major_id : 2, major_name : 'Biochemistry', credit_hours : 127, avg_sal : 70000, avg_years_to_grad : 4, main_building: 'NHB', num_students : 8000, deptno : 1})"
+
+Neo4j on conn "CREATE (:major { major_id : 3, major_name : 'English', credit_hours : 120, avg_sal : 40000, avg_years_to_grad : 3, main_building: 'PAR', num_students : 7000, deptno : 3})"
+
+Neo4j on conn "CREATE (:major { major_id : 4, major_name : 'Anthropology', credit_hours : 118, avg_sal : 45000, avg_years_to_grad : 3, main_building: 'SAC', num_students : 4000, deptno : 3})"
+
+Neo4j on conn "CREATE (:major { major_id : 5, major_name : 'Spanish', credit_hours : 119, avg_sal : 39000, avg_years_to_grad : 4, main_building: 'BEN', num_students : 4000, deptno : 3})"
+
+Neo4j on conn "CREATE (:major { major_id : 6, major_name : 'Chemical Engineering', credit_hours : 135, avg_sal : 120000, avg_years_to_grad : 5, main_building: 'CPE', num_students : 1000, deptno : 4})"
+
+Neo4j on conn "CREATE (:major { major_id : 7, major_name : 'Petroleum Engineering', credit_hours : 128, avg_sal : 110000, avg_years_to_grad : 4, main_building: 'CPE', num_students : 1500, deptno : 4})"
+
+Neo4j on conn "CREATE (:major { major_id : 8, major_name : 'Biomedical Engineering', credit_hours : 132, avg_sal : 100500, avg_years_to_grad : 5, main_building: 'BME', num_students : 1000, deptno : 4})"
+
+Neo4j on conn "CREATE (:major { major_id : 9, major_name : 'Civil Engineering', credit_hours : 127, avg_sal : 100000, avg_years_to_grad : 4, main_building: 'ECJ', num_students : 2000, deptno : 4})"
+
+Neo4j on conn "CREATE (:major { major_id : 10, major_name : 'Accounting', credit_hours : 120, avg_sal : 105000, avg_years_to_grad : 4, main_building: 'CBA', num_students : 5000, deptno : 2})"
+
+Neo4j on conn "CREATE (:major { major_id : 11, major_name : 'Finance', credit_hours : 120, avg_sal : 110000, avg_years_to_grad : 4, main_building: 'CBA', num_students : 5400, deptno : 2})"
+
+Neo4j on conn "CREATE (:major { major_id : 12, major_name : 'Management', credit_hours : 123, avg_sal : 115000, avg_years_to_grad : 4, main_building: 'CBA', num_students : 3000, deptno : 2})"
+
+Neo4j on conn "CREATE (:major { major_id : 13, major_name : 'Physics', credit_hours : 127, avg_sal : 70000, avg_years_to_grad : 4, main_building: 'RLM', num_students : 2500, deptno : 1})"
+
+Neo4j on conn "CREATE (:major { major_id : 14, major_name : 'Psychology', credit_hours : 125, avg_sal : 50000, avg_years_to_grad : 3, main_building: 'SEA', num_students : 6000, deptno : 3})"
+
+
+
+Neo4j on conn "CREATE (:college { deptno : 1, college_name : 'Natural Sciences', num_employees : 800, annual_donations : 5000000, annual_endowment : 12000000})"
+
+Neo4j on conn "CREATE (:college { deptno : 2, college_name : 'Business', num_employees : 1000, annual_donations : 9000000, annual_endowment : 25000000})"
+
+Neo4j on conn "CREATE (:college { deptno : 3, college_name : 'Liberal Arts', num_employees : 700, annual_donations : 1000000, annual_endowment : 8000000})"
+
+Neo4j on conn "CREATE (:college { deptno : 4, college_name : 'Engineering', num_employees : 900, annual_donations : 10000000, annual_endowment : 20000000})"
+
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 1 AND b.deptno = 1 CREATE (a)<-[:major]-(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 2 AND b.deptno = 2 CREATE (a)<-[:major]-(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 3 AND b.deptno = 3 CREATE (a)<-[:major]-(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 4 AND b.deptno = 4 CREATE (a)<-[:major]-(b)"
+
+Neo4j on conn "MATCH(a:major)<-[:major]-(b:college) WHERE b.deptno = 3 RETURN b, a.major_name, a.credit_hours, a.avg_sal, a.avg_years_to_grad, a.main_building"
+
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 1 AND b.deptno = 1 CREATE (a)-[:college]->(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 2 AND b.deptno = 2 CREATE (a)-[:college]->(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 3 AND b.deptno = 3 CREATE (a)-[:college]->(b)"
+Neo4j on conn "MATCH (a:major),(b:college) WHERE a.deptno = 4 AND b.deptno = 4 CREATE (a)-[:college]->(b)"
+
+Neo4j on conn "MATCH(a:major)-[:college]->(b:college) RETURN a.major_name, b.college_name"
+

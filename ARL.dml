@@ -1,0 +1,79 @@
+DELETE FROM F15B3_Emp;
+DELETE FROM F15B3_Lab;
+DELETE FROM F15B3_AppCode;
+DELETE FROM F15B3_Auth;
+DELETE FROM F15B3_Status;
+DELETE FROM F15B3_Task;
+
+alter trigger F15B3_Lab_PK_trig disable;
+alter trigger F15B3_AppCode_PK_trig disable;
+alter trigger F15B3_Auth_PK_trig disable;
+alter trigger F15B3_Status_PK_trig disable;
+alter trigger F15B3_Task_PK_trig disable;
+alter trigger F15B3_Emp_PK_trig disable;
+
+-- Put all of the sample data INSERT statements here. Be sure to use PK and FK values that
+-- are < 100 so that they won't be reapeated by the PK triggers when they are re-enabled.
+
+alter session set nls_date_format = 'DD-Mon-YYYY';
+
+INSERT INTO F15B3_Lab(lab_id, lab_name) VALUES (1, 'Advanced Technology Lab');
+INSERT INTO F15B3_Lab(lab_id, lab_name) VALUES (2, 'Environmental Sciences Lab');
+INSERT INTO F15B3_Lab(lab_id, lab_name) VALUES (3, 'Space and Geophysics Lab');
+INSERT INTO F15B3_Lab(lab_id, lab_name) VALUES (4, 'Admin');
+
+INSERT INTO F15B3_AppCode(appcode_id, approver_code) VALUES (1, 'System Administrator Approver');
+INSERT INTO F15B3_AppCode(appcode_id, approver_code) VALUES (2, 'Lab Director Approver');
+INSERT INTO F15B3_AppCode(appcode_id, approver_code) VALUES (3, 'Executive Director Approver');
+INSERT INTO F15B3_AppCode(appcode_id, approver_code) VALUES (4, 'Chairperson Approver');
+
+INSERT INTO F15B3_Auth(auth_id, right) VALUES (1, 'View');
+INSERT INTO F15B3_Auth(auth_id, right) VALUES (2, 'Edit');
+INSERT INTO F15B3_Auth(auth_id, right) VALUES (3, 'None');
+
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (1, 'Entered', 'The RFE has been created but has not yet been submitted for approval.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (2, 'Submitted', 'The RFE has been submitted to the Lab System Administrator for approval.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (3, 'Returned', 'The RFE has been returned for further information or clarification. Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (4, 'Recalled', 'The requestor has recalled an RFE that has not yet reached final approval. Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (5, 'Rejected', 'The RFE has been rejected and cannot be implemented.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (6, 'SA Approved', 'The Lab System Administrator has approved the RFE; it has been submitted for Lab Director approval.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (7, 'LD Approved', 'The Lab Director has approved the RFE; it has been submitted to the Chairperson of Security Panel approval.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (8, 'CH Approved', 'The Chairperson has approved the RFE; it has been submitted to the Executive Director for final approval.');
+INSERT INTO F15B3_Status(status_id, rfe_status, description) VALUES (9, 'Final Approved', 'The Executive Director has given final approval for the RFE and it may be implemented.');
+
+INSERT INTO F15B3_Task(task_id, task_abbreviation, task_description) VALUES (1, 'Sonar Test', 'Testing sonar devices in Lake Travis. Requires hiring professional divers.');
+INSERT INTO F15B3_Task(task_id, task_abbreviation, task_description) VALUES (2, 'GPS Enhancement', 'Increasing accuracy of GPS to provided specifications. Need expert consultants to assist.');
+INSERT INTO F15B3_Task(task_id, task_abbreviation, task_description) VALUES (3, 'Erosion Study', 'Studying hillside erosion due to diversion of river. Must rent special surveying tools.');
+INSERT INTO F15B3_Task(task_id, task_abbreviation, task_description) VALUES (4, 'Satellites', 'Simulating satellite orbits. Requires installing new software on lab machines.');
+INSERT INTO F15B3_Task(task_id, task_abbreviation, task_description) VALUES (5, 'Weather', 'Predicting weather patterns using mathematical models. Need to rent time on an external supercomputer.');
+
+
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (1, 'Katherine Johnson', 'katherine-johnson@arl.edu', 'A101', 4712323, 'A', '29-JUN-04', 'Executive Director', 4, 2);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (2, 'Ram Kumar', 'ram-kumar@arl.edu', 'A102', 4718989, 'A', '31-DEC-05', 'Chairperson', 4, 2);
+
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (3, 'Joaquin Casaubon', 'joaquin-casaubon@arl.edu', 'B201', 4718888, 'A', '30-JUL-09', 'Lab Director', 1, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (4, 'Jerry Pon', 'jerry-pon@arl.edu', 'B202', 4719001, 'A', '20-MAY-06', 'Lab Director', 2, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (5, 'Anne McCoy', 'anne-mccoy@arl.edu', 'B203', 4717001, 'A', '20-APR-01', 'Lab Director', 3, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (6, 'Paul Thayer', 'paul-thayer@arl.edu', 'B204', 4717210, 'A', '20-NOV-02', 'Lab Director', 4, 1);
+
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (7, 'John Gear', 'john-gear@arl.edu', 'C301', 4710202, 'A', '20-JUL-09', 'Lab System Administrator', 1, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (8, 'Jane Doe', 'jane-doe@arl.edu', 'C302', 4719000, 'A', '20-MAY-07', 'Lab System Administrator', 2, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (9, 'Rachel Coy', 'rachel-coy@arl.edu', 'C303', 4717777, 'A', '20-JAN-01', 'Lab System Administrator', 3, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (10, 'Lakeesha Freeman', 'lakeesha-freeman@arl.edu', 'C304', 4712828, 'A', '13-JAN-02', 'Lab System Administrator', 4, 1);
+
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (11, 'Melissa Barham', 'melissa-barham@arl.edu', 'D401', 4718001, 'A', '11-JUL-09', 'Employee', 1, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (12, 'Louise Metrailer', 'louise-metrailer@arl.edu', 'D401', 4712001, 'A', '27-NOV-01', 'Employee', 2, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (13, 'Joseph Wong', 'joseph-wong@arl.edu', 'D402', 4717701, 'A', '15-DEC-06', 'Employee', 3, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (14, 'Henry Smith', 'henry-smith@arl.edu', 'D402', 4712000, 'A', '18-JUL-02', 'Employee', 1, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (15, 'Michael Volk', 'michael-volk@arl.edu', 'D403', 4712003, 'A', '27-MAY-01', 'Employee', 2, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (16, 'Margaret Thompson', 'margaret-thompson@arl.edu', 'D403', 4717009, 'A', '15-DEC-02', 'Employee', 3, 3);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (17, 'Tania Trust', 'tania-trust@arl.edu', 'D403', 4719009, 'A', '19-DEC-02', 'Employee', 4, 2);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (18, 'Veronica View', 'veronica-view@arl.edu', 'D404', 4719999, 'A', '19-JUL-04', 'Employee', 4, 1);
+INSERT INTO F15B3_Emp(emp_id, emp_name, emp_email, emp_office, emp_phone, emp_status, status_eff_date, type, F15B3_Lab_lab_id, F15B3_Auth_auth_id) VALUES (19, 'Robert Gone', 'robert-gone@arl.edu', 'D405', 4719005, 'I', '19-DEC-12', 'Employee', 4, 3);
+
+alter trigger F15B3_Lab_PK_trig enable;
+alter trigger F15B3_AppCode_PK_trig enable;
+alter trigger F15B3_Auth_PK_trig enable;
+alter trigger F15B3_Status_PK_trig enable;
+alter trigger F15B3_Task_PK_trig enable;
+alter trigger F15B3_Emp_PK_trig enable;

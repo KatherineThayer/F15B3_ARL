@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FYI Reviewer/contacts" directorySegmentName="seg_0" id="D296F6E3-6974-B1D1-8EA8-ECD15449FC6F">
+<createdBy>Michelle</createdBy>
+<createdTime>2015-11-02 22:25:17 UTC</createdTime>
+<ownerDesignName>ARL_Conceptual_Model_New</ownerDesignName>
+<engineerTo>
+<item key="D4B97A89-2E3C-FCD7-2774-BBBD5AACE290" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>9EB534CF-E96C-2CDF-7A93-F556FE89AAF1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0AF58725-D8A1-57D7-C964-010B65912553</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

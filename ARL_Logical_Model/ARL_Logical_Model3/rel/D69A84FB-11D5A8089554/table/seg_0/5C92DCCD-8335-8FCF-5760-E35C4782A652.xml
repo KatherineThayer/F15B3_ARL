@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5C92DCCD-8335-8FCF-5760-E35C4782A652" name="F15B3_RFETask">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>AA07A1F8-7FAB-EFFE-9228-58376AC053C8</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rfetask_id" id="171745E7-0DA3-8211-E19A-73683CE490B8">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>00CF0CAF-2868-B12A-5EC6-02FAA74E29EC</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15B3_RFE_rfe_id" id="5E832D79-D6D8-8F10-F0FD-51A0A43F2423">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>98756B51-E4E9-AFBC-DA06-74071031DAFD</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0FB00D70-4CB6-1E6E-BB7D-B45B02C0D6D6" referredColumn="93BED908-4B6F-16DC-CFB7-601B488D50D4"/>
+</associations>
+</Column>
+<Column name="F15B3_Task_task_id" id="7CC0187D-EDF8-B049-4EE6-5BE15F40B77E">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>82B8CB64-569D-12D7-8AD4-7E92FFDE8A4B</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9628AF8B-DAFE-B979-47EF-ECF5B274AB74" referredColumn="CB662F0E-3B26-3BF7-85AE-8A2DBC0B6D17"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34577E4B-D143-C761-E99E-52F65B994199" name="F15B3_RFETask_PK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>5DFF0A38-71B9-9EE4-0532-92B5BD683655</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="171745E7-0DA3-8211-E19A-73683CE490B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6009552-B0FE-81B7-D39C-7BE247F2ED83" name="F15B3_RFETask_F15B3_RFE_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>1582AF1E-A059-9D26-26ED-BA0118ABAAAA</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E832D79-D6D8-8F10-F0FD-51A0A43F2423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B8AB991-DD21-2EA3-EA29-6FBA596C2DE5" name="F15B3_RFETask_F15B3_Task_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>453E8A93-5EC8-5AAD-8E48-C489577304FD</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CC0187D-EDF8-B049-4EE6-5BE15F40B77E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

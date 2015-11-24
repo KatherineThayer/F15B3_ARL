@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D57A5919-79DD-C425-67BE-82AB257338EB" name="F15B3_Comments">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>1A7FA3E5-3208-3AA0-E385-6B484415D693</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="comment_id" id="5B491918-0197-B3A2-07D2-CBE186C85000">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>03722A79-B5DF-E722-C854-DF9E35FA610D</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comm_entry_date" id="4F0EC54D-CD36-C8B4-1AF9-93594CD250D0">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>D711DFA1-557E-E239-8846-FC74506B1E47</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comments" id="02D54FBC-420E-E2BC-9CD6-B24E9DBC241C">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>B36064CF-12D1-5433-4240-0B98209E191C</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15B3_Emp_emp_id" id="4BA6E98A-D97B-6A79-5478-FD8E1BB5044D">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>10745D96-D64D-7DC0-E2B3-37B519E80801</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD978A4A-471B-8CF9-4E00-3A44C165E7A8" referredColumn="A9F0315B-FF81-B1CB-3F12-48DD7CF1E76E"/>
+</associations>
+</Column>
+<Column name="F15B3_RFE_rfe_id" id="D5AD00BF-8C2A-C70D-9702-E12FAEFAD020">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>9E8A9FFB-6284-13F5-AA25-0129B6EE4E4C</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9155E7FE-E437-2E68-EB87-C88ACFFFE636" referredColumn="93BED908-4B6F-16DC-CFB7-601B488D50D4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5303FD80-1183-9EE4-0647-473A583D4700" name="F15B3_Comments_PK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:47 UTC</createdTime>
+<generatorID>429C70E1-6E46-2EB5-AC5E-21763F7D60DB</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B491918-0197-B3A2-07D2-CBE186C85000"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DEF594DD-DA71-1EBE-BD23-328B623A736E" name="F15B3_Comments_F15B3_Emp_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>A58F7823-D03F-9B0F-8933-02EC738B31A5</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BA6E98A-D97B-6A79-5478-FD8E1BB5044D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D57FBC4-733E-E50D-8FE5-5976DBBE0C88" name="F15B3_Comments_F15B3_RFE_FK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 02:32:48 UTC</createdTime>
+<generatorID>45F0656A-48C7-175B-F908-C3A6994036FD</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5AD00BF-8C2A-C70D-9702-E12FAEFAD020"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AA07A1F8-7FAB-EFFE-9228-58376AC053C8" name="F15B3_RFETask">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:48:06 UTC</createdTime>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<engineerTo>
+<item key="D69A84FB-BBED-4D83-05D6-11D5A8089554" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rfetask_id" id="00CF0CAF-2868-B12A-5EC6-02FAA74E29EC">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:48:35 UTC</createdTime>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<engineerTo>
+<item key="D69A84FB-BBED-4D83-05D6-11D5A8089554" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="98756B51-E4E9-AFBC-DA06-74071031DAFD">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:49:38 UTC</createdTime>
+<generatorID>1582AF1E-A059-9D26-26ED-BA0118ABAAAA</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<engineerTo>
+<item key="D69A84FB-BBED-4D83-05D6-11D5A8089554" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>92BCF3C9-A6ED-BC5B-422C-F1D8C6108083</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="task_id" id="82B8CB64-569D-12D7-8AD4-7E92FFDE8A4B">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:49:52 UTC</createdTime>
+<generatorID>453E8A93-5EC8-5AAD-8E48-C489577304FD</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<engineerTo>
+<item key="D69A84FB-BBED-4D83-05D6-11D5A8089554" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>82DA2286-AD99-7B74-26B9-814F2EBFB036</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5DFF0A38-71B9-9EE4-0532-92B5BD683655" name="F15B3_RFETask PK">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:49:11 UTC</createdTime>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D69A84FB-BBED-4D83-05D6-11D5A8089554" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>00CF0CAF-2868-B12A-5EC6-02FAA74E29EC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

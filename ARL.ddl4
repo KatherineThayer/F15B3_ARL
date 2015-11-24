@@ -1,0 +1,544 @@
+drop view F15B3_emp_view ;
+drop view F15B3_exec_dir_view ;
+drop view F15B3_chair_view ;
+drop view F15B3_lab_dir_view ;
+drop view F15B3_lab_sys_admin_view ;
+drop view F15B3_active_emp_view;
+drop view F15B3_rfes_view;
+drop view F15B3_comments_view;
+drop view F15B3_task_view;
+drop view F15B3_doc_view;
+drop view F15B3_reviewers_view;
+drop view F15B3_approvers_view;
+drop view F15B3_rfes_to_approve_view;
+
+create view F15B3_active_emp_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where emp_status = 'A' ;
+
+create view F15B3_emp_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where type = 'Employee' ;
+
+
+create or replace TRIGGER F15B3_emp_trigger
+     INSTEAD OF insert ON F15B3_emp_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_emp( 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	F15B3_Lab_lab_id,
+	F15B3_Auth_auth_id,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+	EMP_STATUS,
+    STATUS_EFF_DATE)
+     VALUES ( 
+	  'Employee',
+    :NEW.EMP_ID,
+    :NEW.EMP_NAME,
+	:NEW.LAB_NAME,
+	:NEW.RIGHT,
+    :NEW.EMP_EMAIL,
+    :NEW.EMP_OFFICE,
+    :NEW.EMP_PHONE,
+    :NEW.EMP_STATUS,
+    :NEW.STATUS_EFF_DATE) ;
+END;
+/
+
+create view F15B3_exec_dir_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where type = 'Executive Director' ;
+
+
+create or replace TRIGGER F15B3_exec_dir_trigger
+     INSTEAD OF insert ON F15B3_exec_dir_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_emp( 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	F15B3_Lab_lab_id,
+	F15B3_Auth_auth_id,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+	EMP_STATUS,
+    STATUS_EFF_DATE)
+     VALUES ( 
+	  'Executive Director',
+    :NEW.EMP_ID,
+    :NEW.EMP_NAME,
+	:NEW.LAB_NAME,
+	:NEW.RIGHT,
+    :NEW.EMP_EMAIL,
+    :NEW.EMP_OFFICE,
+    :NEW.EMP_PHONE,
+    :NEW.EMP_STATUS,
+    :NEW.STATUS_EFF_DATE) ;
+END;
+/
+
+create view F15B3_chair_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where type = 'Chairperson' ;
+
+
+create or replace TRIGGER F15B3_chair_trigger
+     INSTEAD OF insert ON F15B3_chair_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_emp( 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	F15B3_Lab_lab_id,
+	F15B3_Auth_auth_id,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+	EMP_STATUS,
+    STATUS_EFF_DATE)
+     VALUES ( 
+	  'Chairperson',
+    :NEW.EMP_ID,
+    :NEW.EMP_NAME,
+	:NEW.LAB_NAME,
+	:NEW.RIGHT,
+    :NEW.EMP_EMAIL,
+    :NEW.EMP_OFFICE,
+    :NEW.EMP_PHONE,
+    :NEW.EMP_STATUS,
+    :NEW.STATUS_EFF_DATE) ;
+END;
+/
+
+create view F15B3_lab_dir_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where type = 'Lab Director' ;
+
+
+create or replace TRIGGER F15B3_lab_dir_trigger
+     INSTEAD OF insert ON F15B3_lab_dir_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_emp( 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	F15B3_Lab_lab_id,
+	F15B3_Auth_auth_id,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+	EMP_STATUS,
+    STATUS_EFF_DATE)
+     VALUES ( 
+	  'Lab Director',
+    :NEW.EMP_ID,
+    :NEW.EMP_NAME,
+	:NEW.LAB_NAME,
+	:NEW.RIGHT,
+    :NEW.EMP_EMAIL,
+    :NEW.EMP_OFFICE,
+    :NEW.EMP_PHONE,
+    :NEW.EMP_STATUS,
+    :NEW.STATUS_EFF_DATE) ;
+END;
+/
+
+create view F15B3_lab_sys_admin_view as
+SELECT 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	LAB_NAME,
+	RIGHT,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+    EMP_STATUS,
+    STATUS_EFF_DATE
+FROM F15B3_Lab la JOIN F15B3_emp e
+ON (la.lab_id = e.F15B3_Lab_lab_id)
+JOIN F15B3_Auth au
+ON (e.F15B3_Auth_auth_id = au.auth_id)
+where type = 'Lab System Administrator' ;
+
+
+create or replace TRIGGER F15B3_lab_sys_admin_trigger
+     INSTEAD OF insert ON F15B3_lab_sys_admin_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_emp( 
+	  TYPE,
+    EMP_ID,
+    EMP_NAME,
+	F15B3_Lab_lab_id,
+	F15B3_Auth_auth_id,
+    EMP_EMAIL,
+    EMP_OFFICE,
+    EMP_PHONE,
+	EMP_STATUS,
+    STATUS_EFF_DATE)
+     VALUES ( 
+	  'Lab System Administrator',
+    :NEW.EMP_ID,
+    :NEW.EMP_NAME,
+	:NEW.LAB_NAME,
+	:NEW.RIGHT,
+    :NEW.EMP_EMAIL,
+    :NEW.EMP_OFFICE,
+    :NEW.EMP_PHONE,
+    :NEW.EMP_STATUS,
+    :NEW.STATUS_EFF_DATE) ;
+END;
+/
+
+create view F15B3_rfes_view as
+SELECT 
+	  RFE_ID,
+    EXPLANATION,
+    ALT_PROTECTIONS,
+    APPROVAL_REVIEW_DATE,
+    RFE_STATUS,
+    EMP_NAME
+FROM F15B3_emp e JOIN F15B3_RFE r
+ON (r.F15B3_Emp_emp_id = e.emp_id)
+JOIN F15B3_Status s
+ON (s.status_id = r.F15B3_Status_status_id);
+
+drop sequence rfes_sequence;
+create sequence rfes_sequence
+start with 100
+increment by 1
+nomaxvalue;
+
+create or replace TRIGGER F15B3_rfes_trigger
+     INSTEAD OF insert ON F15B3_rfes_view
+     FOR EACH ROW
+DECLARE
+  rfenum NUMBER;
+BEGIN
+   rfenum := rfes_sequence.nextval;
+    insert into F15B3_RFE( 
+	  RFE_ID,
+    EXPLANATION,
+    ALT_PROTECTIONS,
+    APPROVAL_REVIEW_DATE,
+    F15B3_Status_status_id,
+    F15B3_Emp_emp_id)
+     VALUES ( 
+	  rfenum,
+    :NEW.EXPLANATION,
+    :NEW.ALT_PROTECTIONS,
+    :NEW.APPROVAL_REVIEW_DATE,
+	:NEW.rfe_status,
+	 v('P2_LAB_EMPLOYEE')) ;  -- Use currently logged in emp
+   insert into F15B3_App(
+   app_id,
+   F15B3_Emp_emp_id,
+   F15B3_RFE_rfe_id,
+   F15B3_AppCode_appcode_id)
+   VALUES (
+   rfenum,
+   (select emp_id from F15B3_emp WHERE F15B3_Lab_lab_id = v('P2_LAB') AND type = 'Lab System Administrator'),
+   rfenum,
+   (SELECT appcode_id FROM F15B3_AppCode WHERE approver_code = 'System Administrator Approver'));
+   
+  insert into F15B3_App(
+   app_id,
+   F15B3_Emp_emp_id,
+   F15B3_RFE_rfe_id,
+   F15B3_AppCode_appcode_id)
+   VALUES (
+   rfenum,
+   (select emp_id from F15B3_emp WHERE F15B3_Lab_lab_id = v('P2_LAB') AND type = 'Lab Director'),
+   rfenum,
+   (SELECT appcode_id FROM F15B3_AppCode WHERE approver_code = 'Lab Director Approver'));
+   
+  insert into F15B3_App(
+   app_id,
+   F15B3_Emp_emp_id,
+   F15B3_RFE_rfe_id,
+   F15B3_AppCode_appcode_id)
+   VALUES (
+   rfenum,
+   (select emp_id from F15B3_emp WHERE type = 'Executive Director'),
+   rfenum,
+   (SELECT appcode_id FROM F15B3_AppCode WHERE approver_code = 'Executive Director Approver'));
+   
+  insert into F15B3_App(
+   app_id,
+   F15B3_Emp_emp_id,
+   F15B3_RFE_rfe_id,
+   F15B3_AppCode_appcode_id)
+   VALUES (
+   rfenum,
+   (select emp_id from F15B3_emp WHERE type = 'Chairperson'),
+   rfenum,
+   (SELECT appcode_id FROM F15B3_AppCode WHERE approver_code = 'Chairperson Approver'));
+   
+END;
+/
+
+create view F15B3_rfes_to_approve_view as
+SELECT 
+	  RFE_ID,
+    EXPLANATION,
+    ALT_PROTECTIONS,
+    APPROVAL_REVIEW_DATE,
+    RFE_STATUS,
+    EMP_NAME,
+    APPROVER_CODE
+FROM F15B3_emp e JOIN F15B3_RFE r
+ON (r.F15B3_Emp_emp_id = e.emp_id)
+JOIN F15B3_Status s
+ON (s.status_id = r.F15B3_Status_status_id)
+JOIN F15B3_App a
+ON (a.F15B3_RFE_rfe_id = r.rfe_id)
+JOIN F15B3_AppCode ac
+ON (a.F15B3_AppCode_appcode_id = ac.appcode_id)
+WHERE a.F15B3_Emp_emp_id = v('P2_LAB_EMPLOYEE');
+
+create or replace TRIGGER F15B3_rfes_to_approve_trigger
+     INSTEAD OF update ON F15B3_rfes_to_approve_view
+     FOR EACH ROW
+BEGIN
+  UPDATE F15B3_RFE
+  SET F15B3_Status_status_id = (SELECT status_id FROM F15B3_Status WHERE RFE_STATUS = :NEW.RFE_STATUS)
+  WHERE RFE_ID = :NEW.RFE_ID;
+END;
+/
+
+create view F15B3_comments_view as
+SELECT 
+	  COMMENT_ID,
+    COMM_ENTRY_DATE,
+    COMMENTS,
+    EMP_NAME,
+    F15B3_RFE_rfe_id
+FROM F15B3_emp e JOIN F15B3_Comments c
+ON (e.emp_id = c.F15B3_Emp_emp_id);
+
+
+create or replace TRIGGER F15B3_comments_trigger
+     INSTEAD OF insert ON F15B3_comments_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_Comments( 
+	  COMMENT_ID,
+    COMM_ENTRY_DATE,
+    COMMENTS,
+    F15B3_Emp_emp_id,
+    F15B3_RFE_rfe_id)
+     VALUES ( 
+	  :NEW.COMMENT_ID,
+    SYSDATE(),
+    :NEW.COMMENTS,
+    v('P2_LAB_EMPLOYEE'), -- Use currently logged in emp
+    v('RFE_ID_CHOSEN')); -- current rfe
+END;
+/
+
+create view F15B3_task_view as
+SELECT
+    RFETask_id,
+	  TASK_ID,
+    TASK_ABBREVIATION,
+    TASK_DESCRIPTION
+FROM F15B3_RFETask tr JOIN F15B3_Task t
+ON (tr.F15B3_Task_task_id = t.task_id)
+WHERE tr.F15B3_RFE_rfe_id = v('RFE_ID_CHOSEN');
+
+
+create or replace TRIGGER F15B3_task_trigger
+     INSTEAD OF insert ON F15B3_task_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_RFETask(
+    RFETask_id,
+    F15B3_RFE_rfe_id,
+    F15B3_Task_task_id)
+     VALUES (
+     :NEW.RFETask_id,
+    v('RFE_ID_CHOSEN'),
+    :NEW.TASK_ABBREVIATION);
+END;
+/
+
+create view F15B3_doc_view as
+SELECT 
+	  DOC_ID,
+    FILENAME,
+    FILE_MIMETYPE,
+    FILE_CHARSET,
+    FILE_BLOB,
+    FILE_COMMENTS,
+    TAGS,
+    F15B3_RFE_rfe_id
+FROM F15B3_Doc
+WHERE F15B3_RFE_rfe_id = v('RFE_ID_CHOSEN');
+
+
+create or replace TRIGGER F15B3_doc_trigger
+     INSTEAD OF insert ON F15B3_doc_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_Doc( 
+	  DOC_ID,
+    FILENAME,
+    FILE_MIMETYPE,
+    FILE_CHARSET,
+    FILE_BLOB,
+    FILE_COMMENTS,
+    TAGS,
+    F15B3_RFE_rfe_id)
+     VALUES ( 
+	  :NEW.DOC_ID,
+    :NEW.FILENAME,
+    :NEW.FILE_MIMETYPE,
+    :NEW.FILE_CHARSET,
+    :NEW.FILE_BLOB,
+    :NEW.FILE_COMMENTS,
+    :NEW.TAGS,
+    v('RFE_ID_CHOSEN')); -- current rfe
+END;
+/
+
+create view F15B3_reviewers_view as
+SELECT
+    reviewer_id,
+	  EMP_ID,
+    EMP_NAME
+FROM F15B3_Reviewer r JOIN F15B3_emp e
+ON (r.F15B3_Emp_emp_id = e.emp_id)
+WHERE r.F15B3_RFE_rfe_id = v('RFE_ID_CHOSEN');
+
+
+create or replace TRIGGER F15B3_reviewers_trigger
+     INSTEAD OF insert ON F15B3_reviewers_view
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_Reviewer(
+    reviewer_id,
+    F15B3_Emp_emp_id,
+    F15B3_RFE_rfe_id)
+     VALUES (
+     :NEW.reviewer_id,
+    :NEW.EMP_NAME,
+    v('RFE_ID_CHOSEN'));
+END;
+/
+
+create view F15B3_approvers_view as
+SELECT 
+	  EMP_NAME,
+    APPROVER_CODE
+FROM F15B3_emp e JOIN F15B3_App a
+ON (e.emp_id = a.F15B3_Emp_emp_id)
+JOIN F15B3_AppCode ac
+ON (ac.appcode_id = a.F15B3_AppCode_appcode_id)
+WHERE a.F15B3_RFE_rfe_id = v('RFE_ID_CHOSEN');
+
+
+DROP SEQUENCE his_id;
+create sequence his_id
+minvalue 1
+start with 1
+increment by 1
+nomaxvalue;
+
+
+create or replace TRIGGER F15B3_status_history_trigger
+     AFTER update OF F15B3_Status_status_id
+     ON F15B3_RFE
+     FOR EACH ROW
+BEGIN
+    insert into F15B3_StatHis( 
+      HIST_ID,
+    RFE_STATUS,
+    DESCRIPTION,
+    F15B3_RFE_rfe_id)
+     VALUES ( 
+      his_id.nextval,
+    (SELECT s.rfe_status FROM F15B3_Status s WHERE s.status_id = :OLD.F15B3_Status_status_id),
+    (SELECT s.description FROM F15B3_Status s WHERE s.status_id = :OLD.F15B3_Status_status_id),
+    :OLD.RFE_ID);  -- Use rfe with last status change
+END;
+/

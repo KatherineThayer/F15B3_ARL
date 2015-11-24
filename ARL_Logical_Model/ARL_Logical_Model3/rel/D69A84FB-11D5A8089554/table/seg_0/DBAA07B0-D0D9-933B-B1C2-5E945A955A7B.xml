@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBAA07B0-D0D9-933B-B1C2-5E945A955A7B" name="F15B3_Approver">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>00C8E356-A7BA-472C-C470-EAD2F5760EE5</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="approver_id" id="CC964806-A8D9-6660-A452-0D48B25DB772">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>0E90CEAB-F6C9-3C31-49D1-72CD67F5B274</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15B3_Emp_emp_id" id="4905F4BC-5537-6488-4A79-8AADDE8AAE0B">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>E98E8ABB-7548-5316-57F7-FF2FA63F1DA4</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="566CEBAB-3D50-7807-ADD6-B975BB9F6F21" referredColumn="A9F0315B-FF81-B1CB-3F12-48DD7CF1E76E"/>
+</associations>
+</Column>
+<Column name="F15B3_RFE_rfe_id" id="5B67A122-1857-EC09-7811-B5EF844A3D31">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>B485654C-3C99-9089-DD92-1918DD362658</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="97C639B2-505B-6782-5879-F4FF15B9D1F6" referredColumn="93BED908-4B6F-16DC-CFB7-601B488D50D4"/>
+</associations>
+</Column>
+<Column name="F15B3_AppCode_appcode_id" id="495A9BE1-F554-5482-4C11-FBF44D97A632">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>861FAFE6-4FBB-5199-4AAF-A02F352AF2EF</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30DA6927-AE32-4B9D-D0EB-91C3CF8B48FB" referredColumn="95CF1CC3-49A7-2885-BB36-86C47A8216CF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DE71870-EC2C-C2EC-7DF8-C0EF7050099E" name="F15B3_Approver_PK">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>2582C1B2-3F86-38D2-22BD-B9975E8AF060</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC964806-A8D9-6660-A452-0D48B25DB772"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C3F7B589-0E78-0B53-0E9D-4FFAF37C55CE" name="F15B3_Approver_F15B3_Emp_FK">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>3184F5B9-AAE2-93F5-026C-C5C2C71BA5B1</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4905F4BC-5537-6488-4A79-8AADDE8AAE0B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8601889-B40A-466D-EE7C-824D2281C680" name="F15B3_Approver_F15B3_RFE_FK">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>BB3E6C38-3029-C426-C4CA-6758510A47A2</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B67A122-1857-EC09-7811-B5EF844A3D31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A26156BD-AC18-5340-2105-8ED40655E1E2" name="F15B3_Approver_F15B3_AppCode_FK">
+<createdBy>ramkotta</createdBy>
+<createdTime>2015-11-22 23:04:39 UTC</createdTime>
+<generatorID>3F61ADEF-E793-1231-53F9-4F9DA625F493</generatorID>
+<ownerDesignName>ARL_Logical_Model3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="495A9BE1-F554-5482-4C11-FBF44D97A632"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

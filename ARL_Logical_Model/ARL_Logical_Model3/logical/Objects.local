@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="9A5EDBEB-73C2-F3CA-CDA6-30E9EA447CF7" name="F15B3_App" seqName="seg_0"/>
+   <object objectType="Entity" objectID="CF1BB287-04C3-4C69-9024-22E1D5FCD5D8" name="F15B3_AppCode" seqName="seg_0"/>
+   <object objectType="Entity" objectID="00C8E356-A7BA-472C-C470-EAD2F5760EE5" name="F15B3_Approver" seqName="seg_0"/>
+   <object objectType="Entity" objectID="33027ACF-EDDD-3A8E-3E91-23B8D6E2B018" name="F15B3_Auth" seqName="seg_0"/>
+   <object objectType="Entity" objectID="1A7FA3E5-3208-3AA0-E385-6B484415D693" name="F15B3_Comments" seqName="seg_0"/>
+   <object objectType="Entity" objectID="FEF85E95-99D2-4937-E5AA-F374E68DA98E" name="F15B3_Doc" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7317BA3C-DD16-72E6-4F95-31C6FB65F184" name="F15B3_Emp" seqName="seg_0"/>
+   <object objectType="Entity" objectID="BE86C6D8-5A00-37C1-C85C-16CC7DC84307" name="F15B3_Lab" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EFD4F6C2-403E-CF92-3147-379D3CB436A2" name="F15B3_RFE" seqName="seg_0"/>
+   <object objectType="Entity" objectID="AA07A1F8-7FAB-EFFE-9228-58376AC053C8" name="F15B3_RFETask" seqName="seg_0"/>
+   <object objectType="Entity" objectID="87DE4460-95AD-C0F6-3A32-656731A2BE90" name="F15B3_Reviewer" seqName="seg_0"/>
+   <object objectType="Entity" objectID="1B8ABDC3-C8B4-69CF-EF1F-BE42F03FDB7A" name="F15B3_StatHis" seqName="seg_0"/>
+   <object objectType="Entity" objectID="C461CA92-F5CA-2449-2D2D-6C7527FF1647" name="F15B3_Status" seqName="seg_0"/>
+   <object objectType="Entity" objectID="5F33AD12-D73B-7CD3-8935-BED54F5DAE07" name="F15B3_Task" seqName="seg_0"/>
+   <object objectType="Relation" objectID="0D670781-0B23-ADB3-59FE-64EF2BEE1205" name="R1" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4A569C07-FBDC-48EC-83A7-CB846FD943FC" name="R11" seqName="seg_0"/>
+   <object objectType="Relation" objectID="CEEEE68C-8E58-66F3-4E61-6AFA80E02B41" name="R12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="0F31E471-6054-EEB4-9064-8A8D88D40FC3" name="R13" seqName="seg_0"/>
+   <object objectType="Relation" objectID="3184F5B9-AAE2-93F5-026C-C5C2C71BA5B1" name="R14" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BB3E6C38-3029-C426-C4CA-6758510A47A2" name="R15" seqName="seg_0"/>
+   <object objectType="Relation" objectID="3F61ADEF-E793-1231-53F9-4F9DA625F493" name="R16" seqName="seg_0"/>
+   <object objectType="Relation" objectID="D5A0B87D-902B-1A0B-4CC6-73E794B864DB" name="R17" seqName="seg_0"/>
+   <object objectType="Relation" objectID="78AF9F2D-B0FD-AFB8-28B4-B0E190DC449E" name="R18" seqName="seg_0"/>
+   <object objectType="Relation" objectID="0B98D118-29CB-52CD-0DC1-9954307852D6" name="R19" seqName="seg_0"/>
+   <object objectType="Relation" objectID="95AF13BB-F88B-98D8-AC70-122060A1A7B8" name="R2" seqName="seg_0"/>
+   <object objectType="Relation" objectID="6D8AF912-C368-70F9-47E6-FEF45A77A5A2" name="R3" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1582AF1E-A059-9D26-26ED-BA0118ABAAAA" name="R4" seqName="seg_0"/>
+   <object objectType="Relation" objectID="453E8A93-5EC8-5AAD-8E48-C489577304FD" name="R5" seqName="seg_0"/>
+   <object objectType="Relation" objectID="50A633A5-4E79-2CD8-368E-22545BAFD2C8" name="R6" seqName="seg_0"/>
+   <object objectType="Relation" objectID="3941B545-98AD-A12E-260B-58238DFAA508" name="R7" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A58F7823-D03F-9B0F-8933-02EC738B31A5" name="R8" seqName="seg_0"/>
+   <object objectType="Relation" objectID="45F0656A-48C7-175B-F908-C3A6994036FD" name="R9" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

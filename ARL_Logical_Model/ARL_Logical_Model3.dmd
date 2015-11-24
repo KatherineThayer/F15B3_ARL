@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ARL_Logical_Model3" id="B2909982-D0A6-7240-6580-98E5AB813FBC" version="3.5">
+<createdBy>Katherine</createdBy>
+<createdTime>2015-11-18 01:39:38 UTC</createdTime>
+<ownerDesignName>ARL_Logical_Model_New</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B2909982-D0A6-7240-6580-98E5AB813FBC</designId>
+</OSDM_Design>
